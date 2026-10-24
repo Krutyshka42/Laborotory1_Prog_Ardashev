@@ -1,11 +1,18 @@
 public class Lab1 {
     public static void main(String[] args) {
+	int a;
+	try{
+	a = Integer.parseInt(args[0]);
+	}
+	catch (Exception e){
+	a = 16;
+	System.out.println("Введённые данные не явяляются числом! Взято значение по умолчанию 16");
+	}
 
-        int[] b = new int[8];
-        int ind = 0;
-        for (int i = 16; i >= 2; i -= 2) {
-            b[ind] = i;
-            ind++;
+        int[] b = new int[a/2];  //Делим 16 на 2, чтобы получить колиечство четных чисел
+
+        for (int i = 0; i < 8; i++) {
+            b[i] = 16 - 2*i;
         }
 
 
@@ -23,7 +30,6 @@ public class Lab1 {
         }
 
         printMatrix(b1);
-
 
     }
 
@@ -50,10 +56,9 @@ public class Lab1 {
         {
             for(int j=0; j<matrix[i].length;j++)
             {
-                System.out.printf("%10.3f ", matrix[i][j]);
+                System.out.printf("%10.3f", matrix[i][j]);
             }
             System.out.println();
         }
     }
-
 }
